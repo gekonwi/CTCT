@@ -1,6 +1,18 @@
 # data <- read.csv("/Users/Chinmayee/Desktop/CTCT/CTCT Income Statement.csv")
 
-## Assumption
+# ----------------------------------------------------------------------------
+# Constants
+# ----------------------------------------------------------------------------
+
+# The time interval to suspend execution before plotting, in seconds
+SLEEP_TIME_AT_START = 10
+
+
+# ----------------------------------------------------------------------------
+# Assumption
+# ----------------------------------------------------------------------------
+
+
 ## Background colors
 par(bg="black", fg="white", col.axis = "white",col.lab = "white" ,col.main = "white");
 Quarterly.Revenue = c(
@@ -181,5 +193,8 @@ Forecast <- function(M, WACC) {
 	
 	return(simu);
 }
+
+# stops execution for given time to have a chance to start screen recording
+Sys.sleep(SLEEP_TIME_AT_START)
 
 try = Forecast(1000, 0.103);
